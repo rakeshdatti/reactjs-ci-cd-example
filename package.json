@@ -16,9 +16,18 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --ci --reporters=default --reporters=jest-junit",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
+  },
+  "jest": {
+    "reporters": [
+      "default", 
+      ["jest-junit", {
+        "outputDirectory": "test-coverage",
+        "outputName": "jest.xml"
+      }]
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -39,6 +48,8 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0"
+    "gh-pages": "^6.3.0",
+    "jest-junit": "^16.0.0"
   }
+
 }
