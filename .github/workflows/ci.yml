@@ -40,4 +40,9 @@ jobs:
           npm run deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set up Git config
+        run: |
+         git config --global user.email "rakeshdatti05@gmail.com"
+         git config --global user.name "rakeshdatti"
+
 
